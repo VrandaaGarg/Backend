@@ -98,6 +98,29 @@ PORT=5001
 
 - Implement your database connection logic accordingly.
 
+### 9. Setting Up MongoDB
+
+- Setup a username and secure password.
+- Create a cluster.
+- Go to **Browse Collections**.
+- Add your own data.
+- Add a database name, e.g., `mycontact-backend`, and a collection name, e.g., `contacts`.
+
+### 10. Connecting to the Database
+
+- Navigate to **Overview** -> **Connect** -> **Connect using MongoDB Compass** -> Copy the connection string.
+- In VS Code, click on **Add Connection**.
+- Edit the URL to include your password and at the end after `/`, add the database name, e.g., `mycontact-backend`.
+- Go to **Connect** -> **MongoDB Native Driver** and copy the connection URL.
+- In the `.env` file, add:
+
+```sh
+CONNECTION_STRING=<your_connection_string>
+```
+
+- Edit the URL: add your password and between `/?` add the database name, e.g., `/mycontact-backend?`.
+- Create a file `/config/dbConnection.js` and write the code to connect to the database.
+
 ## License
 
 This project is open-source and available under the MIT License.
