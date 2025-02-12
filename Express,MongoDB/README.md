@@ -1,4 +1,6 @@
-# Contacts API
+# NOTES
+
+## Contacts API
 
 This API provides CRUD (Create, Read, Update, Delete) operations for managing contacts.
 
@@ -20,7 +22,7 @@ This API provides CRUD (Create, Read, Update, Delete) operations for managing co
 - **PUT `/api/contacts/:id`** - Updates an existing contact.
 - **DELETE `/api/contacts/:id`** - Deletes a contact.
 
-## Setup Instructions
+# Setup Instructions
 
 ### 1. Initialization
 
