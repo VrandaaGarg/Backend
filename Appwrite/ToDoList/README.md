@@ -59,5 +59,66 @@ Your API Endpoint and Project ID will be available in the Appwrite console.
 4. Repeat for all required documents.
 5. Click **Save**.
 
-//////////////////////////////////////////////////////////////////////////////////
-now go to settings,as we need to set the permissions
+## 8. Configure Permissions
+
+1. Navigate to **Settings** in Appwrite.
+2. Set **Permissions** for your collection:
+   - Allow any user (authenticated or not) to create, read, update, and delete.
+   - Later, restrict this to authenticated users only.
+3. Click **Update**.
+
+## 9. Complete Configuration in React
+
+Now, start integrating the Appwrite configuration in your React project.
+
+/////////////////////////////////////////////////////////
+
+```markdown
+move to config.js
+
+update the line
+import { Client, Databases } from "appwrite";
+
+now add
+
+const databases = new Databases(client);
+export { client, databases };
+```
+
+also create .env file to store your project id and endpoint
+
+```
+
+create .env
+VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+VITE_APPWRITE_PROJECT_ID=YOUR_PROJECT_ID
+VITE_APPWRITE_DATABASE_ID=YOUR_DATABASE_ID
+
+for database id go to appwrite click on database and copy the id
+
+then
+VITE_APPWRITE_COLLECTION_ID=YOUR_COLLECTION_ID
+
+save it
+
+in config.js
+
+import { Client, Databases } from "appwrite";
+
+const client = new Client();
+client
+.setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT) // Your API Endpoint
+.setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID); // Your project ID
+const databases = new Databases(client);
+
+const databases=new Databases(client);
+export { client, databases };
+
+```
+
+now we will start making requests to appwrite
+/////////////////////////////////////////////////////////
+
+```
+
+```
