@@ -73,50 +73,65 @@ Now, start integrating the Appwrite configuration in your React project.
 
 /////////////////////////////////////////////////////////
 
-```markdown
-move to config.js
+# Configuring Appwrite in Your Project
 
-update the line
+## Update `config.js`
+
+Move to `config.js` and update the import statement:
+
+```js
 import { Client, Databases } from "appwrite";
+```
 
-now add
+Now, add the following:
 
+```js
 const databases = new Databases(client);
 export { client, databases };
 ```
 
-also create .env file to store your project id and endpoint
+## Create `.env` File
+
+Create a `.env` file to store your project ID and endpoint:
 
 ```
-
-create .env
 VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
 VITE_APPWRITE_PROJECT_ID=YOUR_PROJECT_ID
 VITE_APPWRITE_DATABASE_ID=YOUR_DATABASE_ID
+```
 
-for database id go to appwrite click on database and copy the id
+### Retrieve Database ID
 
-then
+Go to Appwrite, click on **Database**, and copy the **Database ID**.
+
+Then, add the collection ID:
+
+```
 VITE_APPWRITE_COLLECTION_ID=YOUR_COLLECTION_ID
+```
 
-save it
+Save the file.
 
-in config.js
+## Final `config.js` Setup
 
+Update `config.js` with the following:
+
+```js
 import { Client, Databases } from "appwrite";
 
 const client = new Client();
 client
-.setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT) // Your API Endpoint
-.setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID); // Your project ID
+  .setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT) // Your API Endpoint
+  .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID); // Your project ID
+
 const databases = new Databases(client);
-
-const databases=new Databases(client);
 export { client, databases };
-
 ```
 
-now we will start making requests to appwrite
+## Next Steps
+
+Now, we will start making requests to Appwrite.
+
 /////////////////////////////////////////////////////////
 
 ```
