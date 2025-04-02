@@ -1,12 +1,63 @@
-# React + Vite
+# Project Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Create a Project
 
-Currently, two official plugins are available:
+Start by creating a new project in your preferred environment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 2. Web App Name and Hosting
 
-## Expanding the ESLint configuration
+Specify your web app name and hosting provider (e.g., Vercel).
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 3. Install Appwrite SDK
+
+In your Vite project, run the following command:
+
+```sh
+npm i appwrite
+```
+
+## 4. Configure Appwrite
+
+Create a new file at `src/appwrite/config.js` and add the following:
+
+```js
+import { Client, Account } from "appwrite";
+
+const client = new Client();
+client
+  .setEndpoint("https://cloud.appwrite.io/v1") // Your API Endpoint
+  .setProject("YOUR_PROJECT_ID"); // Your project ID
+
+export { client };
+```
+
+Your API Endpoint and Project ID will be available in the Appwrite console.
+
+## 5. Setup Database
+
+1. Go to Appwrite.
+2. In the **Database** section, create a new database.
+3. Give it a name (you can leave the ID blank; Appwrite will generate one).
+4. Create a new collection.
+5. Give it a name (ID can be left blank as well).
+
+## 6. Create Schema
+
+1. Open your collection and go to the **Attributes** section.
+2. Click **Add Attribute**.
+3. Select **String**.
+4. Set its properties (name, ID, size, default value).
+5. Click **Create**.
+6. Repeat for all required attributes (e.g., two strings and a boolean for completion).
+7. Click **Save**.
+
+## 7. Add Documents
+
+1. Go to **Documents** in your collection.
+2. Click **Create Document**.
+3. Set its body and define default values (e.g., `true` or `false` for note completion).
+4. Repeat for all required documents.
+5. Click **Save**.
+
+//////////////////////////////////////////////////////////////////////////////////
+now go to settings,as we need to set the permissions
