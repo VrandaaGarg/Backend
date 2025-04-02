@@ -71,10 +71,6 @@ Your API Endpoint and Project ID will be available in the Appwrite console.
 
 Now, start integrating the Appwrite configuration in your React project.
 
-/////////////////////////////////////////////////////////
-
-# Configuring Appwrite in Your Project
-
 ## Update `config.js`
 
 Move to `config.js` and update the import statement:
@@ -131,9 +127,3 @@ export { client, databases };
 ## Next Steps
 
 Now, we will start making requests to Appwrite.
-
-/////////////////////////////////////////////////////////
-
-```
-
-```
